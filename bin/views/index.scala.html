@@ -1,0 +1,13 @@
+@(implicit request: Http.Request)
+
+@main("Welcome to Play") {
+ 
+
+    <ul id="persons"></ul>
+
+    <form method="POST" action="/person">
+        @helper.CSRF.formField
+        <input type="text" name="name"/>
+        <button>Add Person</button>
+    </form>
+}

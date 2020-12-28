@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.PersonController.index(request:Request)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+GET		/tasks						controllers.TaskController.list
+
++ nocsrf
+POST	/tasks						controllers.TaskController.create(request:Request)
+
+
+GET   	/map					    controllers.HomeController.resultMap
+
++ nocsrf
+POST	/person						controllers.PersonController.addPerson(request:Request)
+
+
+GET		/tasks/ativas						controllers.TaskController.listAtivas
